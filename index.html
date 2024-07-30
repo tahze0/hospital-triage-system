@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Triage System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Triage System</h1>
+        <button id="toggle-view">Toggle Admin/Patient View</button>
+    </header>
+
+    <main>
+        <section id="admin-panel">
+            <h2>Admin Panel</h2>
+            <form id="add-patient-form">
+                <input type="text" id="patient-name" placeholder="Patient Name" required>
+                <select id="severity" required>
+                    <option value="1">1 - Critical</option>
+                    <option value="2">2 - High</option>
+                    <option value="3">3 - Moderate</option>
+                    <option value="4">4 - Low</option>
+                    <option value="5">5 - Minimal</option>
+                </select>
+                <button type="submit">Add Patient</button>
+            </form>
+            <table id="patient-queue">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Severity</th>
+                        <th>Wait Time</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="patient-view" class="hidden">
+            <h2>Current Queue Status</h2>
+            <p>Your estimated wait time: <span id="estimated-wait-time">N/A</span></p>
+            <p>Your position in queue: <span id="queue-position">N/A</span></p>
+            <h3>Patient Sign-In</h3>
+            <form id="signin-form">
+                <input type="text" id="patient-signin-name" placeholder="Patient Name" required>
+                <input type="text" id="patient-code" placeholder="Patient Code" required>
+                <button type="submit">Sign In</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Hospital Triage System</p>
+    </footer>
+
+    <script src="js-client-code.js?v=1"></script>
+</body>
+</html>
