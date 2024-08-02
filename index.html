@@ -41,15 +41,20 @@
         </section>
 
         <section id="patient-view" class="hidden">
-            <h2>Current Queue Status</h2>
-            <p>Your estimated wait time: <span id="estimated-wait-time">N/A</span></p>
-            <p>Your position in queue: <span id="queue-position">N/A</span></p>
-            <h3>Patient Sign-In</h3>
-            <form id="signin-form">
-                <input type="text" id="patient-signin-name" placeholder="Patient Name" required>
-                <input type="text" id="patient-code" placeholder="Patient Code" required>
-                <button type="submit">Sign In</button>
-            </form>
+            <h2>Patient View</h2>
+            <div id="patient-signin">
+                <h3>Patient Sign-In</h3>
+                <form id="signin-form">
+                    <input type="text" id="patient-signin-name" placeholder="Patient Name" required>
+                    <input type="text" id="patient-code" placeholder="Patient Code" required>
+                    <button type="submit">Sign In</button>
+                </form>
+            </div>
+            <div id="patient-info" class="hidden">
+                <h3>Current Queue Status</h3>
+                <p>Your estimated wait time: <span id="estimated-wait-time">N/A</span></p>
+                <p>Your position in queue: <span id="queue-position">N/A</span></p>
+            </div>
         </section>
     </main>
 
@@ -57,6 +62,6 @@
         <p>© 2024 Hospital Triage System</p>
     </footer>
 
-    <script src="js-client-code.js?v=1"></script>
+    <script src="js-client-code.js"></script>
 </body>
 </html>

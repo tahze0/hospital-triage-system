@@ -49,23 +49,21 @@ function renderQueue() {
 }
 
 function renderPatientView() {
+    const patientSignin = document.getElementById('patient-signin');
+    const patientInfo = document.getElementById('patient-info');
     const estimatedWaitTime = document.getElementById('estimated-wait-time');
     const queuePosition = document.getElementById('queue-position');
     
     if (currentPatient) {
+        patientSignin.classList.add('hidden');
+        patientInfo.classList.remove('hidden');
         estimatedWaitTime.textContent = `${currentPatient.estimated_wait_time} minutes`;
         queuePosition.textContent = currentPatient.queue_position;
     } else {
-        const waitingPatients = currentQueue.filter(p => p.status === 'Waiting');
-        
-        if (waitingPatients.length > 0) {
-            const lastPatient = waitingPatients[waitingPatients.length - 1];
-            estimatedWaitTime.textContent = `${lastPatient.estimated_wait_time} minutes`;
-            queuePosition.textContent = waitingPatients.length;
-        } else {
-            estimatedWaitTime.textContent = 'No wait';
-            queuePosition.textContent = 'No patients waiting';
-        }
+        patientSignin.classList.remove('hidden');
+        patientInfo.classList.add('hidden');
+        estimatedWaitTime.textContent = 'N/A';
+        queuePosition.textContent = 'N/A';
     }
 }
 
