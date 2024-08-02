@@ -22,8 +22,9 @@ This project Repo is linked in our [portfolio website](https://alperenakin.githu
 #### Step 2: Connect to db and run
 1. Open the cloned repository directory in a text editor
 2. navigate to the config.php file and update with your username and password (and port if needed).
-3. Type "php -S localhost:8000" to set up local server
-4. Enter "localhost:8000" in your browser to start web app
+3. Navigate to the repository folder from the command line/terminal.
+4. Enter "php -S localhost:8000" to set up local server
+5. Enter "localhost:8000" in your browser to start web app
 
 ## How does the web app work?
 
