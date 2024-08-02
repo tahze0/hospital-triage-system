@@ -55,11 +55,11 @@ function updatePatientStatus($id, $status)  {
 
 function calculateBaseWaitTime($severity) {
     $base_time = [
-        5 => 60,  // Minimal: 10 minutes
-        4 => 45,  // Low: 20 minutes
+        1 => 10,  // Critical: 10 minutes
+        2 => 20,  // High: 20 minutes
         3 => 30,  // Moderate: 30 minutes
-        2 => 20,  // High: 45 minutes
-        1 => 10   // Critical: 60 minutes
+        4 => 45,  // Low: 45 minutes
+        5 => 60   // Minimal: 60 minutes
     ];
     
     return $base_time[$severity] ?? 60;
@@ -86,7 +86,7 @@ function getPatientQueue() {
     }
     
     try {
-        $stmt = $db->query("SELECT * FROM patients WHERE status IN ('Waiting', 'In Treatment') ORDER BY severity DESC, arrival_time ASC");
+        $stmt = $db->query("SELECT * FROM patients WHERE status IN ('Waiting', 'In Treatment') ORDER BY severity ASC, arrival_time ASC");
         $patients = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         $patients = calculateWaitTimes($patients);
@@ -111,14 +111,14 @@ function patientSignIn($name, $code) {
         if ($patient) {
             // calculate estimated wait time and queue position
             $stmt = $db->prepare("SELECT COUNT(*) as queue_position, SUM(CASE 
-                WHEN severity = 5 THEN 60
-                WHEN severity = 4 THEN 45
-                WHEN severity = 3 THEN 30
-                WHEN severity = 2 THEN 20
                 WHEN severity = 1 THEN 10
+                WHEN severity = 2 THEN 20
+                WHEN severity = 3 THEN 30
+                WHEN severity = 4 THEN 45
+                WHEN severity = 5 THEN 60
                 ELSE 0 END) as total_wait_time
             FROM patients 
-            WHERE status = 'Waiting' AND (severity > ? OR (severity = ? AND id <= ?))");
+            WHERE status = 'Waiting' AND (severity < ? OR (severity = ? AND id <= ?))");
             $stmt->execute([$patient['severity'], $patient['severity'], $patient['id']]);
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
 

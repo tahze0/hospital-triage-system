@@ -78,7 +78,12 @@ function updateQueue()  {
     .then(response => response.json())
     .then(data => {
         if (data.success) {
-            currentQueue = data.data;
+            currentQueue = data.data.sort((a, b) => {
+                if (a.severity !== b.severity) {
+                    return a.severity - b.severity; // Sort by severity ascending (1 is highest priority)
+                }
+                return new Date(a.arrival_time) - new Date(b.arrival_time); // Then by arrival time
+            });
             renderQueue();
         } else {
             console.error(`Error: ${data.message}`);
