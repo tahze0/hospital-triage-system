@@ -11,7 +11,7 @@ This project Repo is linked in our [portfolio website](https://alperenakin.githu
 
 ## How to Set Up/ Run Locally
 
-###Step 1: Setting up the Database
+#### Step 1: Setting up the Database
 1. Clone this [repo](https://github.com/tahze0/hospital-triage-system)
 2. Open pgAdmin. Create a new Database and name it "hotel_triage"
 3. Right-click on the hospital_triage database. Select "Query Tool".
@@ -19,7 +19,7 @@ This project Repo is linked in our [portfolio website](https://alperenakin.githu
 5. Select and open the schema.sql file from your local git repository.
 6. Click execute script in the Query Tool toolbar to execute the script and import the schema required for the app.
 
-###Step 2: Connect to db and run
+#### Step 2: Connect to db and run
 1. Open the cloned repository directory in a text editor
 2. navigate to the config.php file and update with your username and password (and port if needed).
 3. Type "php -S localhost:8000" to set up local server
