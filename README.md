@@ -2,12 +2,12 @@
 
 Web App implemented using:
 
-HTML, CSS --> Front-end Design
-Javascript --> Client Side Interactions
-PHP --> Server Side Interactions
-Postgres (pgAdmin) DBMS --> Managing Data
+- HTML, CSS --> Front-end Design
+- Javascript --> Client Side Interactions
+- PHP --> Server Side Interactions
+- Postgres (pgAdmin) DBMS --> Managing Data
 
-This project Repo is linked in our [portfolio website](https://alperenakin.github.io/portfolio/).
+- This project Repo is linked in our [portfolio website](https://alperenakin.github.io/portfolio/).
 
 ## How to Set Up/ Run Locally
 
