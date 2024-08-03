@@ -30,12 +30,12 @@ This project Repo is linked in our [portfolio website](https://alperenakin.githu
 
 There are 2 users: patient and admin. 
 
-####Admin
+#### Admin
 - can add a patient using their name
 - specifies the severity of the patient's condition on a scale of 1 to 5
 - Able to modify the satus of a patient by starting treatment and discharging(delete a patient).
 
-####Patient
+#### Patient
 -once admin adds a patient, a code is generated that the patient will use to sign in
 -once signed in, patient can view their status and wait time.
 
