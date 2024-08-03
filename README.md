@@ -36,8 +36,8 @@ There are 2 users: patient and admin.
 - Able to modify the satus of a patient by starting treatment and discharging(delete a patient).
 
 #### Patient
--once admin adds a patient, a code is generated that the patient will use to sign in
--once signed in, patient can view their status and wait time.
+- once admin adds a patient, a code is generated that the patient will use to sign in
+- once signed in, patient can view their status and wait time.
 
 
 
