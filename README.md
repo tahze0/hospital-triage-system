@@ -44,12 +44,21 @@ As an administrator (triage staff), you can:
    - Start treatment for a patient
    - Discharge (delete) a patient from the system
 
+![Admin View](screenshots/admin_view.png)
+
 ### Patient Perspective
 
 As a patient, you can:
 
 1. Sign in using the name and unique 3-letter code provided during registration
+
+![Patient Sign-In View](screenshots/patient_signin.png)
+
+![Bob Sign-In](screenshots/bob_before_signin.png)
+
 2. View your estimated wait time and position in the queue
+
+![Patient View](screenshots/bob_after_signin.png)
 
 ## Technical Overview
 
